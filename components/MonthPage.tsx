@@ -18,9 +18,8 @@ export default async function MonthPage({ month }: { month: string }) {
         <p className="intro">
           Requests for Startups is where AXL shares the problems we think deserve a company. Each
           month, our Foundry sessions bring corporate partners, researchers and operators together to
-          pressure-test ideas, and these are the ones that held up. If one fits what you’re building,
-          or want to build, we’d like to hear from you. You don’t need to work on one of these to
-          work with us.
+          pressure-test ideas, and these are the ones that held up. If one fits something you want
+          to build, we’d love to hear from you.
         </p>
       </section>
 
