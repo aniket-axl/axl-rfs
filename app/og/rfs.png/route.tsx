@@ -1,27 +1,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
-import { getMonths, getRequests } from "@/lib/content";
 
-// One 1200×630 PNG per request, rendered at build time: /og/2026-10/<slug>.png
+// The site-wide 1200×630 share image, rendered at build time: /og/rfs.png
 export const dynamic = "force-static";
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-  const params: { month: string; image: string }[] = [];
-  for (const month of getMonths()) {
-    for (const r of await getRequests(month)) params.push({ month, image: `${r.slug}.png` });
-  }
-  return params;
-}
 
 const read = (...p: string[]) => fs.readFile(path.join(process.cwd(), ...p));
 
-export async function GET(_req: Request, { params }: { params: Promise<{ month: string; image: string }> }) {
-  const { month, image } = await params;
-  const slug = image.replace(/\.png$/, "");
-  const request = (await getRequests(month)).find((r) => r.slug === slug);
-  if (!request) return new Response("Not found", { status: 404 });
+export async function GET() {
 
   const [archivo, mono, logo] = await Promise.all([
     read("assets/fonts/Archivo-Light.ttf"),

@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
-import { getRequests } from "./content";
 import { SITE_DESCRIPTION, SITE_NAME } from "./site";
 
-/** Metadata for a month page. The OG image is the month's first request (the one a share most likely points at). */
-export async function monthMetadata(month: string): Promise<Metadata> {
-  const requests = await getRequests(month);
-  const lead = requests[0];
-  const description = SITE_DESCRIPTION;
-  const image = lead
-    ? { url: `/og/${month}/${lead.slug}.png`, width: 1200, height: 630, alt: "RFS, AXL Requests for Startups" }
-    : undefined;
+const SHARE_IMAGE = { url: "/og/rfs.png", width: 1200, height: 630, alt: "RFS, AXL Requests for Startups" };
 
+/** Metadata for a month page. Every page shares the same title, description and share image. */
+export function monthMetadata(month: string): Metadata {
   return {
     title: SITE_NAME,
-    description,
+    description: SITE_DESCRIPTION,
     alternates: { canonical: `/${month}` },
-    openGraph: { title: SITE_NAME, description, url: `/${month}`, images: image ? [image] : undefined },
-    twitter: { title: SITE_NAME, description, images: image ? [image.url] : undefined },
+    openGraph: { title: SITE_NAME, description: SITE_DESCRIPTION, url: `/${month}`, images: [SHARE_IMAGE] },
+    twitter: { title: SITE_NAME, description: SITE_DESCRIPTION, images: [SHARE_IMAGE.url] },
   };
 }

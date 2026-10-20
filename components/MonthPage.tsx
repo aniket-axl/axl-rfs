@@ -44,7 +44,7 @@ export default async function MonthPage({ month }: { month: string }) {
               <div className="body" dangerouslySetInnerHTML={{ __html: r.html }} />
               {r.briefUrl && (
                 <a className="btn btn-line cta" href={r.briefUrl} target="_blank" rel="noopener noreferrer">
-                  Read our full brief
+                  Read our brief
                   <span className="sr-only"> (opens in a new tab)</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M5 12h14M13 6l6 6-6 6" />

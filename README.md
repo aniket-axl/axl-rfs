@@ -16,7 +16,7 @@ title: "The Data Nobody’s Selling"
 slug: the-data-nobodys-selling   # optional; defaults to the file name
 month: 2026-10                   # informational; the folder decides the month
 order: 1                         # position on the page (lowest first)
-briefUrl: "https://docs.google.com/…"   # "Read our full brief" button; leave "" to hide it
+briefUrl: "https://docs.google.com/…"   # "Read our brief" button; leave "" to hide it
 videoUrl: ""                     # YouTube (watch, youtu.be, Shorts) or Loom share URL; "" shows "Video coming soon"
 ---
 
@@ -28,7 +28,7 @@ Further paragraphs. Ordinary Markdown works: **bold**, [links](https://axl.vc), 
 Commit and push. Vercel rebuilds the site.
 
 - The request's anchor is its slug, e.g. `/2026-10#the-data-nobodys-selling`.
-- Link previews (LinkedIn, Slack, X) use the title "RFS · AXL", the hero intro as the description (`SITE_DESCRIPTION` in `lib/site.ts`, which also feeds the page), and an "RFS" share image at `/og/<YYYY-MM>/<slug>.png`.
+- Link previews (LinkedIn, Slack, X) use the title "RFS · AXL", the hero intro as the description (`SITE_DESCRIPTION` in `lib/site.ts`, which also feeds the page), and one "RFS" share image at `/og/rfs.png`.
 - YouTube Shorts embed at 9:16. Other YouTube and Loom videos embed at 16:9. Any other URL falls back to the "coming soon" card, with a warning in the build log.
 - Files starting with `_` are ignored, which is useful for drafts.
 
@@ -61,7 +61,7 @@ Requires Node 20+.
 | `components/MonthPage.tsx` | Hero, month pills, requests |
 | `components/Toc.tsx` | Left tick-mark contents (≥1300px wide only) |
 | `components/VideoCard.tsx`, `lib/video.ts` | Placeholder card / YouTube and Loom embeds |
-| `app/og/[month]/[image]/route.tsx` | Per-request Open Graph images |
+| `app/og/rfs.png/route.tsx` | The share (Open Graph) image |
 | `lib/content.ts` | Reads and parses `content/` |
 | `public/logos/` | AXL marks; `*-90h` / `*-132h` are resized copies (90h for the header and footer, 132h for OG images) |
 | `assets/fonts/` | TTFs used only for rendering OG images |
