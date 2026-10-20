@@ -6,17 +6,18 @@ import { SITE_DESCRIPTION, SITE_NAME } from "./site";
 export async function monthMetadata(month: string): Promise<Metadata> {
   const requests = await getRequests(month);
   const lead = requests[0];
-  const title = lead ? `${lead.title} · ${SITE_NAME}` : `${monthLabel(month)} · ${SITE_NAME}`;
+  // Browser tab always says "Requests for Startups"; link previews lead with the request's title.
+  const shareTitle = lead ? `${lead.title} · ${SITE_NAME}` : `${monthLabel(month)} · ${SITE_NAME}`;
   const description = lead?.summary || SITE_DESCRIPTION;
   const image = lead
     ? { url: `/og/${month}/${lead.slug}.png`, width: 1200, height: 630, alt: `${lead.title}, AXL Requests for Startups` }
     : undefined;
 
   return {
-    title,
+    title: SITE_NAME,
     description,
     alternates: { canonical: `/${month}` },
-    openGraph: { title, description, url: `/${month}`, images: image ? [image] : undefined },
-    twitter: { title, description, images: image ? [image.url] : undefined },
+    openGraph: { title: shareTitle, description, url: `/${month}`, images: image ? [image] : undefined },
+    twitter: { title: shareTitle, description, images: image ? [image.url] : undefined },
   };
 }
