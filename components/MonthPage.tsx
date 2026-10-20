@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getMonths, getRequests, monthLabel } from "@/lib/content";
+import { SITE_DESCRIPTION } from "@/lib/site";
 import Toc from "./Toc";
 import VideoCard from "./VideoCard";
 
@@ -14,12 +15,7 @@ export default async function MonthPage({ month }: { month: string }) {
         <h1>
           Requests for Startups<span className="dot">.</span>
         </h1>
-        <p className="intro">
-          Requests for Startups is where AXL shares the problems we think deserve a company. Each
-          month, our Foundry sessions bring corporate partners, researchers and operators together to
-          pressure-test ideas, and these are the ones that held up. If one fits something you want
-          to build, we’d love to hear from you.
-        </p>
+        <p className="intro">{SITE_DESCRIPTION}</p>
       </section>
 
       <nav className="months" aria-label="Months">

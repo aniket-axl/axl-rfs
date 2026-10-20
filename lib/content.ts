@@ -16,8 +16,6 @@ export type Request = {
   videoUrl: string;
   /** Body rendered to HTML. The first paragraph carries class="lede". */
   html: string;
-  /** Plain-text first paragraph, used for meta descriptions. */
-  summary: string;
 };
 
 /** Month folders that contain at least one request, newest first. */
@@ -57,7 +55,6 @@ export async function getRequests(month: string): Promise<Request[]> {
       if (!data.title) throw new Error(`content/${month}/${file}: missing "title" in frontmatter`);
 
       const rendered = String(await remark().use(html).process(content.trim()));
-      const firstPara = content.trim().split(/\n\s*\n/)[0] ?? "";
 
       return {
         slug,
@@ -67,7 +64,6 @@ export async function getRequests(month: string): Promise<Request[]> {
         briefUrl: String(data.briefUrl ?? "").trim(),
         videoUrl: String(data.videoUrl ?? "").trim(),
         html: rendered.replace("<p>", '<p class="lede">'),
-        summary: stripMarkdown(firstPara),
       } satisfies Request;
     }),
   );
@@ -85,12 +81,4 @@ export function monthLabel(month: string): string {
     year: "numeric",
     timeZone: "UTC",
   });
-}
-
-function stripMarkdown(s: string): string {
-  return s
-    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
-    .replace(/[*_`>#]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
 }

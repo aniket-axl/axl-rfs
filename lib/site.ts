@@ -1,7 +1,8 @@
-export const SITE_NAME = "Requests for Startups · AXL";
+export const SITE_NAME = "RFS · AXL";
 
+/** Hero intro on the page; also the meta / link-preview description. */
 export const SITE_DESCRIPTION =
-  "Requests for Startups is where AXL shares the problems we think deserve a company.";
+  "Requests for Startups is where AXL shares the problems we think deserve a company. Each month, our Foundry sessions bring corporate partners, researchers and operators together to pressure-test ideas, and these are the ones that held up. If one fits something you want to build, we’d love to hear from you.";
 
 export const CONTACT_HREF =
   "mailto:daniel@axl.vc?cc=founders@axl.vc&subject=Requests%20for%20Startups";

@@ -29,7 +29,6 @@ export async function GET(_req: Request, { params }: { params: Promise<{ month: 
     read("public/logos/axl-mark-on-dark-132h.png"),
   ]);
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
-  const size = request.title.length > 40 ? 72 : 88;
 
   return new ImageResponse(
     (
@@ -62,14 +61,14 @@ export async function GET(_req: Request, { params }: { params: Promise<{ month: 
             style={{
               fontFamily: "Archivo",
               fontWeight: 300,
-              fontSize: size,
+              fontSize: 120,
               lineHeight: 1.05,
               letterSpacing: "-0.03em",
               color: "#FFFFFF",
               maxWidth: 1000,
             }}
           >
-            {request.title}
+            RFS
           </div>
         </div>
       </div>
