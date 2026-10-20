@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getMonths, getRequests, monthLabel } from "@/lib/content";
-import AnchorLink from "./AnchorLink";
 import Toc from "./Toc";
 import VideoCard from "./VideoCard";
 
@@ -45,7 +44,6 @@ export default async function MonthPage({ month }: { month: string }) {
             <div>
               <h2 id={`${r.slug}-title`}>
                 {r.title}
-                <AnchorLink id={r.slug} title={r.title} />
               </h2>
               <div className="body" dangerouslySetInnerHTML={{ __html: r.html }} />
               {r.briefUrl && (

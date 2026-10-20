@@ -261,18 +261,6 @@ a.month:hover {
   align-items: center;
   gap: 12px;
 }
-.anchor {
-  color: var(--text-faint);
-  line-height: 0;
-  text-decoration: none;
-  flex: none;
-}
-.anchor:hover {
-  color: var(--navy);
-}
-.anchor.copied {
-  color: var(--navy);
-}
 .entry p {
   font-size: clamp(16px, 1.3vw, 17px);
   line-height: 1.75;
@@ -391,6 +379,10 @@ footer {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+}
+.foot-brand {
+  display: block;
+  line-height: 0;
 }
 .foot .tag img {
   height: 32px;

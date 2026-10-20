@@ -53,11 +53,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer>
           <div className="foot">
             <div className="tag">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/axl-mark-on-dark-90h.png" alt="AXL" width={92} height={32} loading="lazy" />
+              <a className="foot-brand" href="https://axl.vc" aria-label="AXL home">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/axl-mark-on-dark-90h.png" alt="AXL" width={92} height={32} loading="lazy" />
+              </a>
               <span>Human Potential, AI Superpowered</span>
             </div>
-            <div className="legal">© {new Date().getFullYear()} AXL Venture Studio</div>
+            <div className="legal">© {new Date().getFullYear()} AXL</div>
           </div>
         </footer>
       </body>
