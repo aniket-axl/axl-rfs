@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  themeColor: "#030031",
   colorScheme: "only light",
   viewportFit: "cover",
 };
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="nav">
           <a className="brand" href="https://axl.vc" aria-label="AXL home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logos/axl-mark-on-light-90h.png" alt="AXL" width={86} height={30} />
+            <img src="/logos/axl-mark-on-dark-90h.png" alt="AXL" width={86} height={30} />
           </a>
           <a className="btn btn-solid contact" href={CONTACT_HREF}>
             Contact
@@ -54,15 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="foot">
             <div className="tag">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/axl-mark-on-dark-132h.png" alt="AXL" width={126} height={44} loading="lazy" />
+              <img src="/logos/axl-mark-on-dark-90h.png" alt="AXL" width={92} height={32} loading="lazy" />
               <span>Human Potential, AI Superpowered</span>
-            </div>
-            <div className="cols">
-              <div>
-                <h2>AXL</h2>
-                <a href="https://axl.vc">axl.vc</a>
-                <a href={CONTACT_HREF}>Contact</a>
-              </div>
             </div>
             <div className="legal">© {new Date().getFullYear()} AXL Venture Studio</div>
           </div>

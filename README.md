@@ -63,7 +63,7 @@ Requires Node 20+.
 | `components/VideoCard.tsx`, `lib/video.ts` | Placeholder card / YouTube and Loom embeds |
 | `app/og/[month]/[image]/route.tsx` | Per-request Open Graph images |
 | `lib/content.ts` | Reads and parses `content/` |
-| `public/logos/` | AXL marks; `*-90h` / `*-132h` are resized copies used on the page |
+| `public/logos/` | AXL marks; `*-90h` / `*-132h` are resized copies (90h for the header and footer, 132h for OG images) |
 | `assets/fonts/` | TTFs used only for rendering OG images |
 | `reference/prototype.html` | The approved design |
 
