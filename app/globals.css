@@ -136,6 +136,13 @@ footer :focus-visible {
 .btn-line {
   border: 1.5px solid var(--navy);
   color: var(--navy);
+  transition: background-color 0.15s, color 0.15s;
+}
+.btn-line:hover,
+.btn-line:focus-visible {
+  background: var(--navy);
+  color: var(--white);
+  opacity: 1;
 }
 
 /* hero */
