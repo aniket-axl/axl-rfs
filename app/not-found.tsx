@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Page not found · ${SITE_NAME}`,
+  title: `Page not found - ${SITE_NAME}`,
   robots: { index: false },
 };
 

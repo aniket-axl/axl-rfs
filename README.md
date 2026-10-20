@@ -28,7 +28,7 @@ Further paragraphs. Ordinary Markdown works: **bold**, [links](https://axl.vc), 
 Commit and push. Vercel rebuilds the site.
 
 - The request's anchor is its slug, e.g. `/2026-10#the-data-nobodys-selling`.
-- Link previews (LinkedIn, Slack, X) use the title "RFS · AXL", the hero intro as the description (`SITE_DESCRIPTION` in `lib/site.ts`, which also feeds the page), and one "RFS" share image at `/og/rfs.png`.
+- Link previews (LinkedIn, Slack, X) use the title "Requests for Startups - AXL", the hero intro as the description (`SITE_DESCRIPTION` in `lib/site.ts`, which also feeds the page), and one "RFS" share image at `/og/rfs.png`.
 - YouTube Shorts embed at 9:16. Other YouTube and Loom videos embed at 16:9. Any other URL falls back to the "coming soon" card, with a warning in the build log.
 - Files starting with `_` are ignored, which is useful for drafts.
 

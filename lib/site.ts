@@ -1,4 +1,4 @@
-export const SITE_NAME = "RFS · AXL";
+export const SITE_NAME = "Requests for Startups - AXL";
 
 /** Hero intro on the page; also the meta / link-preview description. */
 export const SITE_DESCRIPTION =

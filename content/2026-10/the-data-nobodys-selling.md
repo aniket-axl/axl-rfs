@@ -17,4 +17,4 @@ For AI labs, that’s starting to change. Protege and Mercor now take raw data f
 
 We don’t know the best place to start. It could be a seller’s rep for funds and insurers, a buyer for the code and data that failed startups leave behind, a tool that tells an owner what its contracts let it sell, or something we haven’t thought of.
 
-If you’re building this, we’d love to work with you.
+If you’d like to build in this space, we’d love to work with you.
